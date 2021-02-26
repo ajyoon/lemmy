@@ -75,6 +75,7 @@ mod tests {
       last_refreshed_at: None,
       inbox_url: None,
       shared_inbox_url: None,
+      bot: false,
     };
 
     let inserted_user = User_::create(&conn, &new_user).unwrap();
@@ -106,6 +107,7 @@ mod tests {
       last_refreshed_at: None,
       inbox_url: None,
       shared_inbox_url: None,
+      bot: false,
     };
 
     let another_inserted_user = User_::create(&conn, &another_user).unwrap();

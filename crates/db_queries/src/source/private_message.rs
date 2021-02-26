@@ -181,6 +181,7 @@ mod tests {
       last_refreshed_at: None,
       inbox_url: None,
       shared_inbox_url: None,
+      bot: false,
     };
 
     let inserted_creator = User_::create(&conn, &creator_form).unwrap();
@@ -212,6 +213,7 @@ mod tests {
       last_refreshed_at: None,
       inbox_url: None,
       shared_inbox_url: None,
+      bot: false,
     };
 
     let inserted_recipient = User_::create(&conn, &recipient_form).unwrap();

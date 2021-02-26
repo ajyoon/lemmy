@@ -35,6 +35,7 @@ pub struct User_ {
   pub deleted: bool,
   pub inbox_url: Url,
   pub shared_inbox_url: Option<Url>,
+  pub bot: bool,
 }
 
 /// A safe representation of user, without the sensitive info
@@ -57,6 +58,7 @@ pub struct UserSafe {
   pub deleted: bool,
   pub inbox_url: Url,
   pub shared_inbox_url: Option<Url>,
+  pub bot: bool,
 }
 
 /// A safe user view with only settings
@@ -86,6 +88,7 @@ pub struct UserSafeSettings {
   pub last_refreshed_at: chrono::NaiveDateTime,
   pub banner: Option<String>,
   pub deleted: bool,
+  pub bot: bool,
 }
 
 #[derive(Clone, Queryable, Identifiable, PartialEq, Debug, Serialize)]
@@ -117,6 +120,7 @@ pub struct UserAlias1 {
   pub last_refreshed_at: chrono::NaiveDateTime,
   pub banner: Option<String>,
   pub deleted: bool,
+  pub bot: bool,
 }
 
 #[derive(Clone, Queryable, Identifiable, PartialEq, Debug, Serialize)]
@@ -136,6 +140,7 @@ pub struct UserSafeAlias1 {
   pub local: bool,
   pub banner: Option<String>,
   pub deleted: bool,
+  pub bot: bool,
 }
 
 #[derive(Clone, Queryable, Identifiable, PartialEq, Debug, Serialize)]
@@ -167,6 +172,7 @@ pub struct UserAlias2 {
   pub last_refreshed_at: chrono::NaiveDateTime,
   pub banner: Option<String>,
   pub deleted: bool,
+  pub bot: bool,
 }
 
 #[derive(Clone, Queryable, Identifiable, PartialEq, Debug, Serialize)]
@@ -186,6 +192,7 @@ pub struct UserSafeAlias2 {
   pub local: bool,
   pub banner: Option<String>,
   pub deleted: bool,
+  pub bot: bool,
 }
 
 #[derive(Insertable, AsChangeset, Clone)]
@@ -217,4 +224,5 @@ pub struct UserForm {
   pub banner: Option<Option<String>>,
   pub inbox_url: Option<Url>,
   pub shared_inbox_url: Option<Option<Url>>,
+  pub bot: bool,
 }

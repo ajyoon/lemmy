@@ -197,6 +197,7 @@ impl FromApubToForm<PersonExt> for UserForm {
       last_refreshed_at: Some(naive_now()),
       inbox_url: Some(person.inner.inbox()?.to_owned().into()),
       shared_inbox_url: Some(shared_inbox),
+      bot: false,
     })
   }
 }

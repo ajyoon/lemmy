@@ -477,6 +477,7 @@ mod tests {
       last_refreshed_at: None,
       inbox_url: None,
       shared_inbox_url: None,
+      bot: false,
     };
 
     let inserted_user = User_::create(&conn, &new_user).unwrap();
@@ -591,6 +592,7 @@ mod tests {
         matrix_user_id: None,
         inbox_url: inserted_user.inbox_url.to_owned(),
         shared_inbox_url: None,
+        bot: false,
       },
       recipient: None,
       post: Post {

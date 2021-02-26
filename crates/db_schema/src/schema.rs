@@ -408,6 +408,7 @@ table! {
         deleted -> Bool,
         inbox_url -> Text,
         shared_inbox_url -> Nullable<Text>,
+        bot -> Bool,
     }
 }
 
@@ -486,6 +487,7 @@ table! {
         last_refreshed_at -> Timestamp,
         banner -> Nullable<Text>,
         deleted -> Bool,
+        bot -> Bool,
     }
 }
 
@@ -517,6 +519,7 @@ table! {
         last_refreshed_at -> Timestamp,
         banner -> Nullable<Text>,
         deleted -> Bool,
+        bot -> Bool,
     }
 }
 

@@ -216,6 +216,8 @@ impl Perform for Register {
       last_refreshed_at: None,
       inbox_url: Some(generate_inbox_url(&user_actor_id)?),
       shared_inbox_url: Some(Some(generate_shared_inbox_url(&user_actor_id)?)),
+      // test
+      bot: false,
     };
 
     // Create the user
@@ -452,6 +454,7 @@ impl Perform for SaveUserSettings {
       public_key: user.public_key,
       last_refreshed_at: None,
       shared_inbox_url: None,
+      bot: user.bot,
     };
 
     let res = blocking(context.pool(), move |conn| {

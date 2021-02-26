@@ -30,6 +30,7 @@ mod safe_type {
     deleted,
     inbox_url,
     shared_inbox_url,
+    bot,
   );
 
   impl ToSafe for User_ {
@@ -52,6 +53,7 @@ mod safe_type {
         deleted,
         inbox_url,
         shared_inbox_url,
+        bot,
       )
     }
   }
@@ -76,6 +78,7 @@ mod safe_type_alias_1 {
     local,
     banner,
     deleted,
+    bot,
   );
 
   impl ToSafe for UserAlias1 {
@@ -96,6 +99,7 @@ mod safe_type_alias_1 {
         local,
         banner,
         deleted,
+        bot,
       )
     }
   }
@@ -120,6 +124,7 @@ mod safe_type_alias_2 {
     local,
     banner,
     deleted,
+    bot,
   );
 
   impl ToSafe for UserAlias2 {
@@ -140,6 +145,7 @@ mod safe_type_alias_2 {
         local,
         banner,
         deleted,
+        bot,
       )
     }
   }
@@ -173,6 +179,7 @@ mod safe_settings_type {
     last_refreshed_at,
     banner,
     deleted,
+    bot,
   );
 
   impl ToSafeSettings for User_ {
@@ -202,6 +209,7 @@ mod safe_settings_type {
         last_refreshed_at,
         banner,
         deleted,
+        bot,
       )
     }
   }
@@ -413,6 +421,7 @@ mod tests {
       last_refreshed_at: None,
       inbox_url: None,
       shared_inbox_url: None,
+      bot: true,
     };
 
     let inserted_user = User_::create(&conn, &new_user).unwrap();
@@ -446,6 +455,7 @@ mod tests {
       deleted: false,
       inbox_url: inserted_user.inbox_url.to_owned(),
       shared_inbox_url: None,
+      bot: true,
     };
 
     let read_user = User_::read(&conn, inserted_user.id).unwrap();
